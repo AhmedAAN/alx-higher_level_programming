@@ -3,4 +3,4 @@ for i in range(0, 10):
     for y in range (i+1, 10):
         if i != 0 or y != 1:
             print(end=", ")
-        print(f"{i}{y}", end="")
+        print("{}{}".format(i,y), end="")
