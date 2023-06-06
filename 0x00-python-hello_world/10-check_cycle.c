@@ -16,11 +16,12 @@ int check_cycle(listint_t *list)
 	current = list;
 	check = current->n;
 
+	current = current->next;
 	while (current)
 	{
-		current = current->next;
 		if (current->n == check)
 			return (1);
+		current = current->next;
 	}
 
 	return (0);
