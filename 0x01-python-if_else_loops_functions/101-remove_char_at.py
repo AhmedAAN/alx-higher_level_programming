@@ -4,5 +4,4 @@ def remove_char_at(str, n):
     for i in str:
         if count != n:
             print(f"{i}", end="")
-        count+=1
-    print("")
+        count += 1
