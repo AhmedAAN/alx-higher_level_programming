@@ -12,6 +12,8 @@ int is_palindrome(listint_t **head)
 	listint_t *end;
 	listint_t *half;
 
+	if(*head == NULL)
+		return (1);
 	start = *head;
 	length = 0;
 	while (start != NULL)
@@ -19,8 +21,6 @@ int is_palindrome(listint_t **head)
 		start = start->next;
 		length++;
 	}
-	if(length == 0)
-		return (1);
 	if (length % 2 == 0)
 		half_index = length / 2;
 	else
