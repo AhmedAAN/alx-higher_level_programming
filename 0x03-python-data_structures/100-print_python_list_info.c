@@ -4,7 +4,7 @@
 
 void print_python_list_info(PyObject *p)
 {
-	Py_ssize_t size = PyList_Size(p);
+	long int size = PyList_Size(p);
 	PyListObject *obj = (PyListObject *)p;
 	int i;
 
