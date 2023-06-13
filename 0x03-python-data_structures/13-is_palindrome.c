@@ -32,7 +32,7 @@ int is_palindrome(listint_t **head)
 	for (i = 0; i < length / 2; i++)
 	{
 		start = *head;
-		end = *head;
+		end = half;
 		for (x = 0; x < i; x++)
 			start = start->next;
 		for (y = half_index; y < length - 1 - i; y++)
