@@ -7,9 +7,10 @@
  */
 int is_palindrome(listint_t **head)
 {
-	int length, i, x, y;
+	int length, i, x, y, half_index;
 	listint_t *start;
 	listint_t *end;
+	listint_t *half;
 
 	start = *head;
 	length = 0;
@@ -20,13 +21,21 @@ int is_palindrome(listint_t **head)
 	}
 	if(length == 0)
 		return (1);
+	if (length % 2 == 0)
+		half_index = length / 2;
+	else
+		half_index = length / 2 + 1;
+	half = *head;
+	for (i = 0; i < half_index; i++)
+		half = half->next;
+
 	for (i = 0; i < length / 2; i++)
 	{
 		start = *head;
 		end = *head;
 		for (x = 0; x < i; x++)
 			start = start->next;
-		for (y = 0; y < length - 1 - i; y++)
+		for (y = half_index; y < length - 1 - i; y++)
 			end = end->next;
 		if (start->n != end->n)
 			return (0);
