@@ -4,13 +4,12 @@ def roman_to_int(roman_string):
         return 0
     if not isinstance(roman_string, str):
         return 0
-    values = {"M": 1000, "D": 500, "C": 100, "L": 50, "X": 10, "V": 5, "I": 1}
+    v = {"M": 1000, "D": 500, "C": 100, "L": 50, "X": 10, "V": 5, "I": 1}
     total = 0
     for ch in range(len(roman_string)):
         current_ch = roman_string[ch]
-        if ch < len(roman_string) - 1:
-            if values[roman_string[ch + 1]] > values[current_ch]:
-                total -= values[current_ch]
+        if ch < len(roman_string) - 1 and v[roman_string[ch + 1]] > v[current_ch]:
+            total -= v[current_ch]
         else:
-            total += values[current_ch]
+            total += v[current_ch]
     return (total)
