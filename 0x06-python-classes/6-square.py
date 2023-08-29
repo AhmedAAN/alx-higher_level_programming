@@ -13,8 +13,8 @@ class Square:
             size (int): The size of the new Square
             position (int, int): The position of the new square
         """
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
@@ -45,13 +45,14 @@ class Square:
 
     def area(self):
         """Return the area of the current Square"""
-        return (slef.__size ** 2)
+        return (self.__size ** 2)
 
     def my_print(self):
         """Prints the square with the # character."""
         if self.__size == 0:
             print("")
             return
+
         [print("") for i in range(self.__position[1])]
         for i in range(self.__size):
             for y in range(self.__position[0]):
