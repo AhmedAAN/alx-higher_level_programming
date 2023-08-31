@@ -7,6 +7,9 @@ def add_integer(a, b=98):
 
     Float arguments are typecasted to ints before addition is performed.
 
+    Args:
+        a (int/float): The first number
+        a (int/float): The second number (defult = 98)
     Raises:
         TypeError: If either of a or b is a non-integer and non-float.
     """
