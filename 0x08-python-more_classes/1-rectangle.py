@@ -13,7 +13,7 @@ class Rectangle:
             width (int): The width of the rectangle.
             height (int): The length of the rectangle.
         """
-  1-rectangle.py      self.width = width
+        self.width = width
         self.height = height
 
     @property
