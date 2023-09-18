@@ -29,7 +29,7 @@ class Base:
             list_dictionaries (list): List of dictionaries."""
         if list_dictionaries is None or list_dictionaries == []:
             return "[]"
-        return json.dumbs(list_dictionaries)
+        return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
@@ -51,7 +51,7 @@ class Base:
 
         Args:
             json_string (str): string representing a list of dictionaries."""
-        if json_string in None or json_string == '[]':
+        if json_string is None or json_string == '[]':
             return []
         return json.loads(json_string)
 
@@ -73,7 +73,7 @@ class Base:
     def load_from_file(cls):
         """Return a list of instances from a JSON file."""
         filename = cls.__name__ + ".json"
-        path = "./" + filename
+        path = Path("./" + filename)
         if not path.is_file():
             return []
         with open(filename, "r") as file:
