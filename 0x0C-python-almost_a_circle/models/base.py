@@ -4,11 +4,11 @@ import json
 from pathlib import Path
 
 
-
 class Base:
     """This will be the “base” of all other classes in this project."""
 
     __nb_objects = 0
+
     def __init__(self, id=None):
         """Intialize a new base.
 
@@ -34,7 +34,7 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         """Write the JSON string representation of list_objs to a file.
-        
+
         Args:
             list_objs (list): List of instances who inherits of Base."""
         filename = cls.__name__ + '.json'
@@ -48,7 +48,7 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         """Return the list of the JSON string representation json_string.
-        
+
         Args:
             json_string (str): string representing a list of dictionaries."""
         if json_string in None or json_string == '[]':
@@ -58,7 +58,7 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """Return an instance with all attributes already set.
-        
+
         Args:
             **dictionary (dict)): Double pointer to a dictionary."""
         if dictionary and dictionary != {}:
@@ -67,7 +67,7 @@ class Base:
             else:
                 new_obj = cls(1)
         new_obj.update(**dictionary)
-        retrun (ne_obj)
+        return (ne_obj)
 
     @classmethod
     def load_from_file(cls):

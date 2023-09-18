@@ -91,13 +91,13 @@ class Rectangle(Base):
 
         [print("") for y in range(self.y)]
         for h in range(self.height):
-            [print(" ", end = "") for x in range(self.x)]
-            [print("#", end = "") for w in range(self.width)]
+            [print(" ", end="") for x in range(self.x)]
+            [print("#", end="") for w in range(self.width)]
             print("")
 
     def update(self, *args, **kwargs):
         """Assign an argument to each attribute.
-        
+
         Args:
             *args (ints): New attribute values.
                 - 1st argument represents id attribute
@@ -153,5 +153,10 @@ class Rectangle(Base):
     def __str__(self):
         """Return the print() and str() representation of the Rectangle."""
 
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y, self.width, self.height)
-    
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
+            self.id,
+            self.x,
+            self.y,
+            self.width,
+            self.height
+            )
